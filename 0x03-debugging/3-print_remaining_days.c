@@ -35,7 +35,3 @@ void print_remaining_days(int month, int day, int year)
 		}
 	}
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 4953de755b403a51361dd82067eb9a2b66a4beed
