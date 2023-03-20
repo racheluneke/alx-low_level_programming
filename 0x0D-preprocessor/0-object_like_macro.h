@@ -1,5 +1,5 @@
-#ifndef RACHEL'S
-#define RACHEL'S
+#ifndef RACHEL_S
+#define RACHEL_S
 
 #define SIZE 1024
 
