@@ -1,1 +1,0 @@
-stracture typedef
