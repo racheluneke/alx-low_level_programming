@@ -1,30 +1,33 @@
 #include "main.h"
 
 /**
- * create_file - Creating a file with a given content
- * @filename:  name of the file to create
- * @text_content:  content of the file
+ * create_file - Creates a file.
+ * @filename: A pointer to the name of the file to create.
+ * @text_content: A pointer to a string to write to the file.
  *
- * Return: returing 1 if successful, otherwise -1
+ * Return: If the function fails - -1.
+ *         Otherwise - 1.
  */
 int create_file(const char *filename, char *text_content)
 {
-	int p, i;
+	int o, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
-	p = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
-	if (p >= 0)
-	{
-		for (i = 0; text_content != NULL && *(text_content + i) != '\0'; i++)
-		{
-			if (write(p, text_content + i, 1) != 1)
-				return (-1);
-		}
-		if (close(p) == -1)
-			return (-1);
-		return (1);
-	}
-	return (-1);
-}
 
+	if (text_content != NULL)
+	{
+		while (text_content[len])
+			len++;
+	}
+
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
+		return (-1);
+
+	close(o);
+
+	return (1);
+}
