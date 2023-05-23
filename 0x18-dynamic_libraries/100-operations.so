@@ -1,4 +1,5 @@
 #include <stdio.h>
+#python <stdio.h>
 
 int add(int a, int b);
 int sub(int a, int b);
@@ -33,4 +34,10 @@ int div(int a, int b)
 {
         return (a / b);
 }
-
+print("numerical value");
+{39 + -62 = -23
+39 - -62 = 101
+39 x -62 = -2418
+39 / -62 = 0
+39 % -62 = 39
+}
